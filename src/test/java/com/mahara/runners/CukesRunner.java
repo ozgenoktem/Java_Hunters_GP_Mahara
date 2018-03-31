@@ -7,11 +7,13 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		plugin= {"pretty",
 				"html:target/cucumber-report"
 		},
-		tags="@JH",
+
+	tags="@JH",
 		features="src/test/resources/com/mahara/features/",
-		glue="com/mahara/step_definitions" ,
-		dryRun=false
+		glue="com/mahara/step_definitions",
+		dryRun=true
 		)
 public class CukesRunner extends AbstractTestNGCucumberTests {
 
 }
+
