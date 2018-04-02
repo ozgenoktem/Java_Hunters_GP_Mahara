@@ -1,9 +1,9 @@
 #Author: Rafael
-Feature: Friends
+Feature: Show Friends
 
 Scenario: Show current friends
 
 
 
-Scenario:Show pending friends
+Scenario: Show pending friends 
 
