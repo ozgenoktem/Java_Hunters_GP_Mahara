@@ -21,7 +21,7 @@ Feature: My groups
     And Under General in Shared page notifications choose Group administrators
     Then Click Save group
     And About | Java Hunters Best Team should be displayed
-    Then User clicks menu button
+    Then User click menu button
     And User clicks Groups
     And User clicks My groups
     And My groups page is displayed
