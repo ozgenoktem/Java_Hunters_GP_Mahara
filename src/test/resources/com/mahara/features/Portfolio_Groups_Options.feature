@@ -2,6 +2,7 @@
 
 Feature: Mahara Webpage Portfolio and Groups options
 
+@JH
   Scenario: Verify Portfolio options
     Given User log into Mahara webpage by using account information
     When User click menu button
@@ -13,13 +14,14 @@ Feature: Mahara Webpage Portfolio and Groups options
 		| Export |
 		| Import |
 
-  Scenario Outline: Verify Groups options
+@JH
+  Scenario: Verify Groups options
   Given User log into Mahara webpage by using account information
     When User click menu button
     Then User click to drop down box which next to Groups
 		Then following menu options should be visible for Groups option
-		| My Groups |
-		| Find Groups |
+		| My groups |
+		| Find groups |
 		| My friends |
 		| Find people |
 		| Institution membership |

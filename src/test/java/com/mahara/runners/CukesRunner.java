@@ -11,7 +11,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 	tags="@JH",
 		features="src/test/resources/com/mahara/features/",
 		glue="com/mahara/step_definitions",
-		dryRun=true
+		dryRun=false
 		)
 public class CukesRunner extends AbstractTestNGCucumberTests {
 
