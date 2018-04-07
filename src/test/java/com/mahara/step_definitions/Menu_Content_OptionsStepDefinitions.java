@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 
 import com.mahara.pages.MaharaLoginPage;
 import com.mahara.pages.MaharaMenu_ContentPage;
+import com.mahara.pages.MaharaPortfolio_GroupsOptionsPage;
 import com.mahara.pages.MainPage;
 import com.mahara.utilities.BrowserUtils;
 import com.mahara.utilities.Configuration;
@@ -30,6 +31,7 @@ public class Menu_Content_OptionsStepDefinitions {
 	MaharaLoginPage loginPage = new MaharaLoginPage();
 	MainPage mainPage = new MainPage();
 	MaharaMenu_ContentPage contentPage = new MaharaMenu_ContentPage();
+    
 
 	@When("^User log into Mahara webpage by using account information$")
 	public void user_log_into_Mahara_webpage_by_using_account_information() {
@@ -51,7 +53,7 @@ public class Menu_Content_OptionsStepDefinitions {
 	public void following_menu_options_should_be_visible_for_Menu_option(String name, List<WebElement>options) throws InterruptedException {
 
 		// capture list of webelements
-		List<WebElement> topMenuOptions = contentPage.topMenuOptions(name);
+		List<WebElement> topMenuOptions = contentPage.topMenuOptions();
 		// get their text in a list
 		System.out.println("Top Menu Options: "+topMenuOptions);
 		
@@ -74,20 +76,21 @@ public class Menu_Content_OptionsStepDefinitions {
 	
 
 	@Then("^following menu options should be visible for Content option$")
-	public void following_menu_options_should_be_visible_for_Content_option() throws InterruptedException {
+	public void following_menu_options_should_be_visible_for_Content_option(List<WebElement>options) throws InterruptedException {
+		String xpath="//span[.='Show menu for Content']/../..//ul//li";
 		
-		List<WebElement> contentOption=contentPage.contentOptionList(contentPage.contentOptions.getText());
+		List<WebElement> contentOption=driver.findElements(By.xpath(xpath));
 		System.out.println("Content Options: "+contentOption);
 		
 		List<String> ContentOptionsString = BrowserUtils.getElementsText(contentOption);
 		System.out.println("Strings: "+ContentOptionsString);
 		
-		assertEquals(ContentOptionsString.size(), contentOption.size(), "Number of expected menu options did not match");
-		for (int i = 0; i < contentOption.size(); i++) {
-			assertEquals(ContentOptionsString.get(i), contentOption.get(i));
+		assertEquals(ContentOptionsString.size(),options.size(), "Number of expected menu options did not match");
+		for (int i = 0; i < options.size(); i++) {
+			assertEquals(ContentOptionsString.get(i), options.get(i));
 		
 		
-		
+	
 		}
 	}
 

@@ -1,7 +1,7 @@
 #Author: Ozgen
 Feature: Mahara Webpage Menu and Content options
 
-@oz
+
   Scenario: Verify Menu options
     
     When User log into Mahara webpage by using account information

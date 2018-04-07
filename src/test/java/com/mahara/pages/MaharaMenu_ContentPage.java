@@ -27,24 +27,22 @@ private WebDriver driver;
 	public WebElement contentOptions;
 	
 	
-	public List<WebElement> topMenuOptions(String name) throws InterruptedException{
+	public List<WebElement> topMenuOptions() throws InterruptedException{
 		Thread.sleep(5000);
 	
-		String xpath="//a[.='"+name+"']";
+		String xpath="//span[.='Show menu for Content']/../..//ul//li";
 		
 		return driver.findElements(By.xpath(xpath));
 	}
 	
 	
-	public List<WebElement> contentOptionList(String locator) throws InterruptedException{
+//	public List<WebElement> contentOptionList(String locator) throws InterruptedException{
 		
-	Thread.sleep(5000);
+//	Thread.sleep(5000);
 	
-	return driver.findElements(By.xpath(locator));
+//	return driver.findElements(By.xpath(locator));
 	
-			//	new ArrayList<>();
-	//	content=locator.getText();
 		
-	}		
+//	}		
 
 }
