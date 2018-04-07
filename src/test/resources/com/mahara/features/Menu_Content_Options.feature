@@ -1,6 +1,7 @@
 #Author: Ozgen
 Feature: Mahara Webpage Menu and Content options
 
+@oz
   Scenario: Verify Menu options
     
     When User log into Mahara webpage by using account information
@@ -11,7 +12,8 @@ Feature: Mahara Webpage Menu and Content options
       | Content   |
       | Portfolio |
       | Groups    |
-
+      
+  @oz
   Scenario: Verify Content options
   
     When User log into Mahara webpage by using account information
