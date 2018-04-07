@@ -25,8 +25,8 @@ public class MaharaLoginPage{
 	public WebElement login;
 	
 	public void login(String userName,String pwd) {
-		username.sendKeys(userName);
-		password.sendKeys(pwd);
+		username.sendKeys("admin");
+		password.sendKeys("abc123");
 		login.click();
 	}
 }
