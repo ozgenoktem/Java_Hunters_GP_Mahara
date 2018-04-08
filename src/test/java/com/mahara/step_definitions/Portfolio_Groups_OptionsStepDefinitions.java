@@ -24,14 +24,14 @@ public class Portfolio_Groups_OptionsStepDefinitions {
 			portGroupPage.groupsDropDownBox.click();
 			break;
 		}
-		
+		                                         
 	}
 
 	@Then("^following menu options should be visible for (Portfolio|Groups) option$")
 	public void following_menu_options_should_be_visible_for_Portfolio_option(String menu,List<String> options) throws InterruptedException {
 		 List<WebElement> topMenuOptions = portGroupPage.topMenuOptions(menu);
 		 List<String> topMenuOptionsString=BrowserUtils.getElementsText(topMenuOptions);
-		
+		                                                                                                                                                                                                   
 		 assertEquals(topMenuOptionsString.size(), options.size(),
 				 "Number of expected menu options did not match");
 		 

@@ -1,7 +1,7 @@
 #Author:Orkhan
 Feature: Creating Portfolio
 
-
+@gee
   Scenario: Creating new Collections
  		When User log into Mahara webpage by using account information
     Then User click menu button
@@ -15,7 +15,7 @@ Feature: Creating Portfolio
  		Then User click Done button
  		Then User should see created data
 
-
+@gee
   Scenario: Creating new Pages
   When User log into Mahara webpage by using account information
     Then User click menu button
@@ -24,11 +24,11 @@ Feature: Creating Portfolio
     Then User click Add button
     Then User click on Page
     Then User enter Page title "My new page"
-    Then User enter Page description "This time is going to be different..."
+    Then User enter Page description "At this time is going to be different..."
     Then User click on Save button
   		Then User click on Display page button
-  		Then User add comment "This is long steps"
+  		Then User add comment "Now it will be different"
   		Then User upload a file
   		Then User click on Comment button
-  		Then User should see created page and written comment
+  		Then User should see created page and attached file
  

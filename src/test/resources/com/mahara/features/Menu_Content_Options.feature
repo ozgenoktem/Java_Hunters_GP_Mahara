@@ -24,6 +24,6 @@ Feature: Mahara Webpage Menu and Content options
       | Profile pictures |
       | Files            |
       | Journals         |
-      | Resume           |
+      | Résumé           |
       | Plans            |
       | Notes            |

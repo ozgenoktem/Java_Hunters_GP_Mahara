@@ -18,7 +18,7 @@ private WebDriver driver;
 		this.driver = Driver.getDriver();
 		PageFactory.initElements(driver, this);	
 	}
-	//    
+	   
 	
 	@FindBy(xpath="(//button[@type='button'])[2]")
 	public WebElement portfolioDropDownBox;

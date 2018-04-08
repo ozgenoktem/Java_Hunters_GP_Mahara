@@ -21,8 +21,6 @@ import com.mahara.utilities.BrowserUtils;
 import com.mahara.utilities.Configuration;
 import com.mahara.utilities.Driver;
 
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -76,12 +74,12 @@ public class Menu_Content_OptionsStepDefinitions {
 	
 
 	@Then("^following menu options should be visible for Content option$")
-	public void following_menu_options_should_be_visible_for_Content_option(List<WebElement>options) throws InterruptedException {
-		String xpath="//span[.='Show menu for Content']/../..//ul//li";
+	public void following_menu_options_should_be_visible_for_Content_option(List<String>options) throws InterruptedException {
+	
 		
-		List<WebElement> contentOption=driver.findElements(By.xpath(xpath));
+		List<WebElement> contentOption=contentPage.topMenuOptions();
 		System.out.println("Content Options: "+contentOption);
-		
+
 		List<String> ContentOptionsString = BrowserUtils.getElementsText(contentOption);
 		System.out.println("Strings: "+ContentOptionsString);
 		
