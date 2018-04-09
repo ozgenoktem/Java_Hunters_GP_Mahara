@@ -5,7 +5,7 @@ Feature: Creating Professional Profile
 
   Scenario: Verify Resume tab options 
     When User log into Mahara webpage by using account information
-    When User clicks on main menu button
+    When User click menu button
     Then User clicks on content button
     And User clicks on Resume button
     Then following tab options should be visible for Resume:

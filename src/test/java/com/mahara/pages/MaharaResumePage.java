@@ -88,6 +88,8 @@ public class MaharaResumePage {
 		jsExecuter.executeScript("arguments[0].scrollIntoView(true)", element);
 		jsExecuter.executeScript("arguments[0].click();", element);
 	}
+	
+	
 
 }
 

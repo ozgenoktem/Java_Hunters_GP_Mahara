@@ -21,14 +21,7 @@ public class CreatingNewResumeStepDefenition {
 	MaharaResumePage resume=new MaharaResumePage();
 	
 	
-	
-	@When("^User clicks on main menu button$")
-	public void user_clicks_on_main_menu_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
 
-	
 	@Then("^User clicks on content button$")
 	public void user_clicks_on_content_button() {
 		resume.contentDropBoxButton.click();

@@ -2,11 +2,11 @@
 
 Feature: Creating Plans 
  
- 
+ @ts
  Scenario: Creating new Plan
     When User log into Mahara webpage by using account information
-    When User clicks on main menu button
-    Then User clicks on content button
+    When User click menu button
+    Then User click content button
     And User clicks on Plans button
     Then User clics on New plan button
     When  user fills up Title field with "Plan"

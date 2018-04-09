@@ -22,11 +22,15 @@ public class MaharaPlanPage {
 	@FindBy(xpath="//a[@class='btn btn-default']")
 	public WebElement newPlan;
 	
-	@FindBy (id="addplan_title_container")
+	@FindBy (xpath="(//input[@type=\"text\"])[2]")
 	public WebElement Title;
+	//className="form-control required text autofocus") compound className are not permitted
 	
-	@FindBy (xpath="form-control textarea")
+	@FindBy (xpath="//textarea[@class=\"form-control textarea\"]")
 	public WebElement textArea;
+	
+	@FindBy (xpath ="//button[@class=\"btn-primary submitcancel submit btn\"]")
+	public WebElement savePlan;
 
 }
 

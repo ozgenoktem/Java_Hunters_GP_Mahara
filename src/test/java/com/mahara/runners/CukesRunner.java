@@ -8,7 +8,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				"html:target/cucumber-report"
 		},
 
-	tags="",
+	tags="@ts",
 		features="src/test/resources/com/mahara/features/",
 		glue="com/mahara/step_definitions",
 		dryRun=false
