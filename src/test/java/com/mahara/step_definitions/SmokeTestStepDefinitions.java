@@ -1,33 +1,57 @@
 package com.mahara.step_definitions;
 
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.mahara.pages.MaharaCreateProfilePage;
+import com.mahara.utilities.Driver;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 
 public class SmokeTestStepDefinitions {
-
 	
+	//OZGEN NEEDS TO IMPLEMENT
 
-@Then("^verify first name and user name input boxes$")
-public void verify_first_name_and_user_name_input_boxes() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
-}
+	MaharaCreateProfilePage profilePage = new MaharaCreateProfilePage();
+	private WebDriver driver = Driver.getDriver();
 
-@Then("^User click Profile Page button$")
-public void user_click_Profile_Page_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
-}
+	@Then("^verify first name and user name input boxes$")
+	public void verify_first_name_and_user_name_input_boxes() throws InterruptedException {
 
-@Then("^click LogOut$")
-public void click_LogOut() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
-}
+		
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("profileform_firstname")));
+		WebElement element1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("profileform_lastname")));
 
-@Then("^verify you have been logged out successfully$")
-public void verify_you_have_been_logged_out_successfully() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
-}
+		
+		System.out.println(profilePage.firstnameBox.getAttribute("value"));
+		System.out.println(profilePage.lastnameBox.getAttribute("value"));
+
+		assertTrue(profilePage.firstnameBox.getAttribute("value").trim().contains("huntjava"));
+		assertTrue(profilePage.lastnameBox.getAttribute("value").trim().contains("aa"));
+	}
+
+	@Then("^User click Profile Page button$")
+	public void user_click_Profile_Page_button() {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Then("^click LogOut$")
+	public void click_LogOut() {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Then("^verify you have been logged out successfully$")
+	public void verify_you_have_been_logged_out_successfully() {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
 }

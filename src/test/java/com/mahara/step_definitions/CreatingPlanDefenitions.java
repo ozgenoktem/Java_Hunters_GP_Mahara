@@ -12,7 +12,8 @@ public class CreatingPlanDefenitions {
 	
 	
 	@Then("^User clicks on Plans button$")
-	public void user_clicks_on_Plans_button() {
+	public void user_clicks_on_Plans_button() throws InterruptedException {
+	//	Thread.sleep(500);
 	   plan.Plans.click();
 
 	}
@@ -23,7 +24,8 @@ public class CreatingPlanDefenitions {
 	}
 
 	@When("^user fills up Title field with \"([^\"]*)\"$")
-	public void user_fills_up_Title_field_with(String title) {
+	public void user_fills_up_Title_field_with(String title) throws InterruptedException {
+		Thread.sleep(500);
 		plan.Title.sendKeys(title);
 	   
 	}
