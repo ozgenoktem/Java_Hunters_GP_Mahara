@@ -12,7 +12,7 @@ Feature: Uploading new files and new journals
     Then user click create a folder button and named it "Project Docume"
     Then user click edit file button
     And user change Comments radio button from Off to On
-    Then user click Save Changes
+   Then user click Save Changes
     
 
   Scenario: Uploading new journals in account

@@ -1,5 +1,6 @@
 
 //OZGEN
+//IMPLEMENT SECOND ONE
 package com.mahara.step_definitions;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,8 +24,8 @@ public class CreatingNewFilesAndJournalsStepDefinitions {
 
 	@Then("^click Choose Files$")
 	public void click_Choose_Files() {
-		filesJournals.uploadFile.click();
-
+		String file = "/Users/ozgenoktemkose/Desktop/06a8c541-2526-4d07-a816-50771a7fc352.jpg";
+		filesJournals.uploadFile.sendKeys(file);
 	}
 
 	@Then("^upload two different files which are related to group project$")
@@ -32,9 +33,6 @@ public class CreatingNewFilesAndJournalsStepDefinitions {
 		String file = "/Users/ozgenoktemkose/Desktop/06a8c541-2526-4d07-a816-50771a7fc352.jpg";
 		filesJournals.uploadFile.sendKeys(file);
 		
-		filesJournals.uploadFile.click();
-		String file1 = "/Users/ozgenoktemkose/Desktop/Java Hunters Responsibilities.pdf";
-		filesJournals.uploadFile.sendKeys(file1);
 	}
 
 	@Then("^user click create a folder button and named it \"([^\"]*)\"$")
@@ -44,16 +42,13 @@ public class CreatingNewFilesAndJournalsStepDefinitions {
 	}
 
 	@Then("^user click edit file button$")
-	public void user_click_edit_file_button() {
-		JavascriptExecutor jsEX = (JavascriptExecutor) driver;
-		jsEX.executeScript("window.scrollBy(0,300);");
-		
+	public void user_click_edit_file_button() {	
 	   filesJournals.editButton.click();
 	}
 
 	@Then("^user change Comments radio button from Off to On$")
 	public void user_change_Comments_radio_button_from_Off_to_On() {
-	    filesJournals.clicking(filesJournals.editButton);
+	    filesJournals.clicking(filesJournals.onOff);
 	}
 
 	@Then("^user click Save Changes$")
