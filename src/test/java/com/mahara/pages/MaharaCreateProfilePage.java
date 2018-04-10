@@ -65,6 +65,18 @@ private WebDriver driver;
 	
 	@FindBy(xpath="//div[.='Profile saved successfully']")
 	public WebElement savePageVerify;
+	
+	@FindBy(linkText="Profile pictures")
+	public WebElement profilePict;
+	
+	@FindBy(id="upload_file")
+	public WebElement chooseFile;
+	
+	@FindBy(id="upload_title")
+	public WebElement photoTitle;
+	
+	@FindBy(id="upload_submit")
+	public WebElement uploadPhoto;
 
 	
 	public void selectCountry() {

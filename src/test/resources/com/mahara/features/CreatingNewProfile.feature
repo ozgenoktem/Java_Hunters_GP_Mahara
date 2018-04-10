@@ -1,7 +1,7 @@
 #Author: Ozgen
+#Completed
 Feature: Creating a new Profile with details
 
-  @so
   Scenario: Create new profile
     When User log into Mahara webpage by using account information
     When User click menu button
@@ -20,6 +20,7 @@ Feature: Creating a new Profile with details
     And enter "SDET" into the occupation part
     And click Save Profile
     Then user should see "Profile saved successfully"
+
 
   Scenario: Adding new profile photo on new account
     When User log into Mahara webpage by using account information
