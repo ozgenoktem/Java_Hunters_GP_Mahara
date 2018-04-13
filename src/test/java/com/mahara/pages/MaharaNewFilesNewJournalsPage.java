@@ -41,6 +41,21 @@ private WebDriver driver;
 	@FindBy(xpath="//input[@value='Save changes']")
 	public WebElement saveChanges;
 	
+	@FindBy(linkText="Journals")
+	public WebElement journal;
+	
+	@FindBy(xpath="//a[@class='btn btn-default addpost']")
+	public WebElement newEntry;
+	
+	@FindBy(xpath="//input[@class='form-control required text autofocus']")
+	public WebElement journalTitle;
+	
+	@FindBy(xpath="(//div[@class='mce-widget mce-btn mce-first'])[1]")
+	public WebElement boldButton;
+	
+	@FindBy(id="mceu_36")
+	public WebElement journalInbox;
+	
 	
 	public void clicking(WebElement element) {
 		JavascriptExecutor jse = (JavascriptExecutor)driver; 

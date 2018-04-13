@@ -12,7 +12,7 @@ public class CreatingPlanDefenitions {
 	
 	
 	@Then("^User clicks on Plans button$")
-	public void user_clicks_on_Plans_button() throws InterruptedException {
+	public void user_clicks_on_Plans_button()  {
 	//	Thread.sleep(500);
 	   plan.Plans.click();
 

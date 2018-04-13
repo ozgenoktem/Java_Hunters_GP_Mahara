@@ -9,11 +9,11 @@ Feature: Smoke test for Mahara website
     And verify first name and user name input boxes
     When User click menu button
    Then User click content button
-    And User clicks on Plans button
- #   Then User clics on New plan button
- #   When  user fills up Title field with "Plan"
- #   And user fills up Description field with"Lets do it"
- #   Then User click Save plan button
+     And User clicks on Plans button
+    Then User clics on New plan button
+    When  user fills up Title field with "Plan"
+    And user fills up Description field with"Lets do it"
+    Then User click Save plan button
  #   When User click menu button
  #   And User clicks Portfolio button
   #  And User clicks Export button
