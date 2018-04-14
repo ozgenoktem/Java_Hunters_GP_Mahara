@@ -5,15 +5,15 @@ package com.mahara.step_definitions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
 
 import com.mahara.pages.MaharaNewFilesNewJournalsPage;
+import com.mahara.utilities.BrowserUtils;
 import com.mahara.utilities.Driver;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 
 public class CreatingNewFilesAndJournalsStepDefinitions {
@@ -91,8 +91,10 @@ public class CreatingNewFilesAndJournalsStepDefinitions {
 		// WebElement
 		// element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//body[@data-id='editpost_description']")));
 		driver.switchTo().frame(iframe);
-	//	driver.switchTo().parentFrame();
-		driver.findElement(By.id("editpost_description_ifr")).sendKeys(entry);
+		// driver.switchTo().parentFrame();
+		driver.findElement(By.tagName("body")).sendKeys(entry + Keys.PAGE_DOWN);
+		driver.findElement(By.xpath("//*[@id='editpost_tags_container']/span[1]/span[1]/span/ul/li/input"))
+				.sendKeys(Keys.PAGE_DOWN);
 		// ooo filesJournals.journalInbox.sendKeys(entry);
 		// WebDriverWait wait = new WebDriverWait(driver, 5);
 		// WebElement element =
@@ -104,8 +106,26 @@ public class CreatingNewFilesAndJournalsStepDefinitions {
 
 	@Then("^user click Save Entry$")
 	public void user_click_Save_Entry() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		Actions actions = new Actions(driver);
+		// JavascriptExecutor jsEX = (JavascriptExecutor) driver;
+		// jsEX.executeScript("window.scrollBy(0,3000);");
+		// BrowserUtils.waitFor(4);
+
+		actions.moveToElement(filesJournals.saveJournal).perform();
+		actions.click();
+		// WebElement element = driver.findElement(By.className("btn-primary
+		// submitcancel"));
+		// element.click();
+		// submit btn"));
+		// actions.moveToElement(element).perform();
+		// element.click();
+		
+		//PLEASE ASK MARUF
+		//WE TRIED MANY THINGS WITH MARIFAT, BUT DIDNT WORK
+		
+		
+		
+
 	}
 
 }

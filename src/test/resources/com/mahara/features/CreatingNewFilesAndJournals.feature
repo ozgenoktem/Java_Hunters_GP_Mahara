@@ -24,7 +24,7 @@ Feature: Uploading new files and new journals
     Then user enter "Project Process" into Title inbox
     And user click bold button in entry box
     Then user enter "First week process is going well, We are all about to finish our feature files" into entry box
-  #  Then user click Save Entry
+    Then user click Save Entry
     
     
     

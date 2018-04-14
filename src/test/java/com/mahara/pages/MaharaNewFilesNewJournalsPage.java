@@ -53,8 +53,11 @@ private WebDriver driver;
 	@FindBy(xpath="(//div[@class='mce-widget mce-btn mce-first'])[1]")
 	public WebElement boldButton;
 	
-	@FindBy(id="mceu_36")
+	@FindBy(id="editpost_description_ifr")
 	public WebElement journalInbox;
+	
+	@FindBy(xpath="//*[@id=\"editpost_submitpost\"]")
+	public WebElement saveJournal;
 	
 	
 	public void clicking(WebElement element) {
