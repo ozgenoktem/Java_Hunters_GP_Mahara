@@ -42,7 +42,7 @@ public class Menu_Content_OptionsStepDefinitions {
 
 	@When("^User click menu button$")
 	public void user_click_menu_button() throws InterruptedException {
-		Thread.sleep(1000);
+	//	Thread.sleep(1000);
 		mainPage.menuButton.click();
 	}
 	

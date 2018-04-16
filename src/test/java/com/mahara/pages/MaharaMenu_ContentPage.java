@@ -34,15 +34,6 @@ private WebDriver driver;
 		
 		return driver.findElements(By.xpath(xpath));
 	}
-	
-	
-//	public List<WebElement> contentOptionList(String locator) throws InterruptedException{
-		
-//	Thread.sleep(5000);
-	
-//	return driver.findElements(By.xpath(locator));
-	
-		
-//	}		
+			
 
 }

@@ -3,7 +3,10 @@ package com.mahara.step_definitions;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.WebDriver;
+
 import com.mahara.pages.MaharaCreatingPagesAndCollectionsPage;
+import com.mahara.utilities.Driver;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
@@ -11,10 +14,10 @@ import cucumber.api.java.en.Then;
 public class CreatingNewPagesAndCollectionsStepDefinitions {
 	
 	MaharaCreatingPagesAndCollectionsPage pagAndColl=new MaharaCreatingPagesAndCollectionsPage();
+	private WebDriver driver = Driver.getDriver();
 	
 	@Then("^User click \"([^\"]*)\"$")
 	public void user_click(String arg1) {
-	  
 		pagAndColl.pagesAndColl.click();
 	}
 

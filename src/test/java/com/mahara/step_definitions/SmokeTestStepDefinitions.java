@@ -9,9 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.mahara.pages.MaharaCreateProfilePage;
+import com.mahara.pages.MaharaNewFilesNewJournalsPage;
+import com.mahara.pages.MainPage;
 import com.mahara.utilities.Driver;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 
 public class SmokeTestStepDefinitions {
@@ -19,6 +20,8 @@ public class SmokeTestStepDefinitions {
 	//OZGEN NEEDS TO IMPLEMENT
 
 	MaharaCreateProfilePage profilePage = new MaharaCreateProfilePage();
+	MainPage main=new MainPage();
+	MaharaNewFilesNewJournalsPage files=new MaharaNewFilesNewJournalsPage();
 	private WebDriver driver = Driver.getDriver();
 
 	@Then("^verify first name and user name input boxes$")
@@ -37,21 +40,34 @@ public class SmokeTestStepDefinitions {
 		assertTrue(profilePage.lastnameBox.getAttribute("value").trim().contains("aa"));
 	}
 
-	@Then("^User click Profile Page button$")
-	public void user_click_Profile_Page_button() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+//	@Then("^User click Profile Page button$")
+//	public void user_click_Profile_Page_button() {
+//		main.portfolioButton.click();
+//	}
+	
+	@Then("^User click Portfolio Page button$")
+	public void user_click_Portfolio_Page_button() {
+		main.portfolioButton.click();
 	}
-
-	@Then("^click LogOut$")
-	public void click_LogOut() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	
+	@Then("^User click Pages and collections$")
+	public void user_click_Pages_and_collections() {
+	   main.pagesColl.click();
 	}
+	
+	
 
-	@Then("^verify you have been logged out successfully$")
-	public void verify_you_have_been_logged_out_successfully() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+//	@Then("^click LogOut$")
+//	public void click_LogOut() {
+//		main.profilePage.click();
+//		main.LogOut.click();
+//	}
+
+	@Then("^click LogOut and verify you have been logged out successfully$")
+	public void click_LogOut_and_verify_you_have_been_logged_out_successfully() {
+	//	main.profilePage.click();
+		files.clicking(main.profilePage);
+		files.clicking(main.LogOut);
+	//	main.LogOut.click();
 	}
 }
