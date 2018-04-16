@@ -2,6 +2,7 @@
 #Completed
 Feature: Creating a new Profile with details
 
+
   Scenario: Create new profile
     When User log into Mahara webpage by using account information
     When User click menu button

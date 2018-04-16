@@ -1,8 +1,6 @@
 
 //OZGEN
 
-
-
 //COMPLETED
 package com.mahara.step_definitions;
 
@@ -33,8 +31,7 @@ public class CreatingNewProfileStepDefinitions {
 	public void in_the_new_page_user_enter_into_introduction_part(String note) throws InterruptedException {
 		JavascriptExecutor jsEX = (JavascriptExecutor) driver;
 		jsEX.executeScript("window.scrollBy(0,500);");
-
-		Thread.sleep(1000);
+	
 		createProfile.introPart.sendKeys(note);
 	}
 
@@ -59,6 +56,7 @@ public class CreatingNewProfileStepDefinitions {
 	public void user_enter_into_postal_address_box(String address) {
 		JavascriptExecutor jsEX = (JavascriptExecutor) driver;
 		jsEX.executeScript("window.scrollBy(0,300);");
+
 		createProfile.websiteBox.sendKeys(address);
 
 	}
@@ -67,6 +65,7 @@ public class CreatingNewProfileStepDefinitions {
 	public void user_enter_into_city_region_box(String city) {
 		JavascriptExecutor jsEX = (JavascriptExecutor) driver;
 		jsEX.executeScript("window.scrollBy(0,400);");
+
 		createProfile.websiteBox.sendKeys(city);
 
 	}
@@ -75,6 +74,7 @@ public class CreatingNewProfileStepDefinitions {
 	public void user_select_from_country_dropdown_list(String arg1) {
 		JavascriptExecutor jsEX = (JavascriptExecutor) driver;
 		jsEX.executeScript("window.scrollBy(0,500);");
+		
 		createProfile.selectCountry();
 	}
 
@@ -82,6 +82,7 @@ public class CreatingNewProfileStepDefinitions {
 	public void user_enter_mobile_phone_number(String phone) {
 		JavascriptExecutor jsEX = (JavascriptExecutor) driver;
 		jsEX.executeScript("window.scrollBy(0,800);");
+	
 		createProfile.phoneBox.sendKeys(phone);
 	}
 
@@ -92,6 +93,7 @@ public class CreatingNewProfileStepDefinitions {
 
 	@Then("^enter \"([^\"]*)\" into the occupation part$")
 	public void enter_into_the_occupation_part(String occup) {
+	
 		createProfile.occupation.sendKeys(occup);
 	}
 
@@ -117,6 +119,7 @@ public class CreatingNewProfileStepDefinitions {
 
 	@Then("^user enter \"([^\"]*)\" in the image title box$")
 	public void user_enter_in_the_image_title_box(String title) {
+		createProfile.photoTitle.clear();
 		createProfile.photoTitle.sendKeys(title);
 	}
 

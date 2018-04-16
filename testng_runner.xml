@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Presta shop automation tests" verbose="2">
+<suite name="Mahara Regression Automation" verbose="2">
 	<test name="Automated tests">
 		<classes>
 			<class name="com.mahara.runners.CukesRunner"></class>

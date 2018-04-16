@@ -13,8 +13,8 @@ public class RegressionTestRunner {
 					"json:target/cucumber.json"
 			},
 			tags="@regression", //when you write tag and implement it in feature, it runs just with this tags
-			features="src/test/resources/com/app/features/",		
-			glue="com/app/step_definitions/",
+			features="src/test/resources/com/mahara/features/",		
+			glue="com/mahara/step_definitions",
 			dryRun=false
 			
 			)

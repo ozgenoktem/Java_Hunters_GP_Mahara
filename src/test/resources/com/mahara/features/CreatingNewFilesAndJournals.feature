@@ -1,4 +1,5 @@
 #Author: Ozgen
+#Last step save entry needs to implement
 
 Feature: Uploading new files and new journals
 
@@ -14,7 +15,7 @@ Feature: Uploading new files and new journals
     And user change Comments radio button from Off to On
    Then user click Save Changes
     
-@os
+
   Scenario: Uploading new journals in account
     When User log into Mahara webpage by using account information
     When User click menu button

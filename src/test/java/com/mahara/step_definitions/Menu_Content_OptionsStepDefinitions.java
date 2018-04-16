@@ -5,6 +5,7 @@
 package com.mahara.step_definitions;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +30,6 @@ public class Menu_Content_OptionsStepDefinitions {
 	MaharaLoginPage loginPage = new MaharaLoginPage();
 	MainPage mainPage = new MainPage();
 	MaharaMenu_ContentPage contentPage = new MaharaMenu_ContentPage();
-    
 
 	@When("^User log into Mahara webpage by using account information$")
 	public void user_log_into_Mahara_webpage_by_using_account_information() {
@@ -38,30 +38,27 @@ public class Menu_Content_OptionsStepDefinitions {
 		driver.manage().window().fullscreen();
 		loginPage.login(Configuration.getProperty("username"), Configuration.getProperty("password"));
 	}
-	
 
 	@When("^User click menu button$")
 	public void user_click_menu_button() throws InterruptedException {
-	//	Thread.sleep(1000);
+		// Thread.sleep(1000);
 		mainPage.menuButton.click();
 	}
-	
 
 	@Then("^following menu options should be visible for Menu option$")
-	public void following_menu_options_should_be_visible_for_Menu_option(String name, List<WebElement>options) throws InterruptedException {
+	public void following_menu_options_should_be_visible_for_Menu_option(List<String> options)
+			throws InterruptedException {
 
-		// capture list of webelements
-		List<WebElement> topMenuOptions = contentPage.topMenuOptions();
-		// get their text in a list
-		System.out.println("Top Menu Options: "+topMenuOptions);
-		
-		List<String> topMenuOptionsString = BrowserUtils.getElementsText(topMenuOptions);
-		// compare the list with options
-		System.out.println("Strings: "+topMenuOptionsString);
-		
-		assertEquals(topMenuOptionsString.size(), options.size(), "Number of expected menu options did not match");
+		List<WebElement> contentOption = contentPage.topMenuOptions();
+		System.out.println("Content Options: " + contentOption);
+
+		List<String> ContentOptionsString = BrowserUtils.getElementsText(contentOption);
+		System.out.println("Strings: " + ContentOptionsString);
+
+		assertEquals(ContentOptionsString.size(), options.size(), "Number of expected menu options did not match");
 		for (int i = 0; i < options.size(); i++) {
-			assertEquals(topMenuOptionsString.get(i), options.get(i));
+			assertEquals(ContentOptionsString.get(i), options.get(i));
+
 		}
 
 	}
@@ -71,27 +68,22 @@ public class Menu_Content_OptionsStepDefinitions {
 		Thread.sleep(2000);
 		contentPage.contentButton.click();
 	}
-	
 
 	@Then("^following menu options should be visible for Content option$")
-	public void following_menu_options_should_be_visible_for_Content_option(List<String>options) throws InterruptedException {
-	
-		
-		List<WebElement> contentOption=contentPage.topMenuOptions();
-		System.out.println("Content Options: "+contentOption);
+	public void following_menu_options_should_be_visible_for_Content_option(List<String> options)
+			throws InterruptedException {
+
+		List<WebElement> contentOption = contentPage.ContentOptions();
+		System.out.println("Content Options: " + contentOption);
 
 		List<String> ContentOptionsString = BrowserUtils.getElementsText(contentOption);
-		System.out.println("Strings: "+ContentOptionsString);
-		
-		assertEquals(ContentOptionsString.size(),options.size(), "Number of expected menu options did not match");
+		System.out.println("Strings: " + ContentOptionsString);
+
+		assertEquals(ContentOptionsString.size(), options.size(), "Number of expected menu options did not match");
 		for (int i = 0; i < options.size(); i++) {
 			assertEquals(ContentOptionsString.get(i), options.get(i));
-		
-		
-	
+
 		}
 	}
 
 }
-
-

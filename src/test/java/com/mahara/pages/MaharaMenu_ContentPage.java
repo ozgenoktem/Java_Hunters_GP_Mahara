@@ -26,14 +26,37 @@ private WebDriver driver;
 	@FindBy(xpath="//ul[@class='child-nav collapse in']//a")
 	public WebElement contentOptions;
 	
+	@FindBy(xpath="//nav[@class='nav navbar-collapse nav-main collapse in']/ul/li/a")
+	public WebElement menuOptions;
 	
-	public List<WebElement> topMenuOptions() throws InterruptedException{
+	@FindBy(linkText="Dashboard")
+	public WebElement dashboard;
+	
+	@FindBy(linkText="Content")
+	public WebElement content;
+	
+	@FindBy(linkText="Portfolio")
+	public WebElement portfolio;
+	
+	@FindBy(linkText="Groups")
+	public WebElement groups;
+	
+	
+	public List<WebElement> ContentOptions() throws InterruptedException{
 		Thread.sleep(5000);
 	
 		String xpath="//span[.='Show menu for Content']/../..//ul//li";
 		
 		return driver.findElements(By.xpath(xpath));
 	}
-			
+		
+	
+	public List<WebElement> topMenuOptions() throws InterruptedException{
+		Thread.sleep(5000);
+	
+		String xpath="//nav[@class='nav navbar-collapse nav-main collapse in']/ul/li/a";
+		
+		return driver.findElements(By.xpath(xpath));
+	}
 
 }

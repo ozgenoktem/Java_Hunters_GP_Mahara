@@ -17,7 +17,7 @@ import cucumber.api.java.en.Then;
 
 public class SmokeTestStepDefinitions {
 	
-	//OZGEN NEEDS TO IMPLEMENT
+	//COMPLETED
 
 	MaharaCreateProfilePage profilePage = new MaharaCreateProfilePage();
 	MainPage main=new MainPage();
@@ -39,11 +39,6 @@ public class SmokeTestStepDefinitions {
 		assertTrue(profilePage.firstnameBox.getAttribute("value").trim().contains("huntjava"));
 		assertTrue(profilePage.lastnameBox.getAttribute("value").trim().contains("aa"));
 	}
-
-//	@Then("^User click Profile Page button$")
-//	public void user_click_Profile_Page_button() {
-//		main.portfolioButton.click();
-//	}
 	
 	@Then("^User click Portfolio Page button$")
 	public void user_click_Portfolio_Page_button() {
@@ -55,19 +50,10 @@ public class SmokeTestStepDefinitions {
 	   main.pagesColl.click();
 	}
 	
-	
-
-//	@Then("^click LogOut$")
-//	public void click_LogOut() {
-//		main.profilePage.click();
-//		main.LogOut.click();
-//	}
 
 	@Then("^click LogOut and verify you have been logged out successfully$")
 	public void click_LogOut_and_verify_you_have_been_logged_out_successfully() {
-	//	main.profilePage.click();
 		files.clicking(main.profilePage);
 		files.clicking(main.LogOut);
-	//	main.LogOut.click();
 	}
 }
