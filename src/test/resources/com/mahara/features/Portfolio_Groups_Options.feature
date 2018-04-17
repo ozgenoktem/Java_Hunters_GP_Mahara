@@ -2,7 +2,7 @@
 
 Feature: Mahara Webpage Portfolio and Groups options
 
-@JH
+@regression
   Scenario: Verify Portfolio options
     Given User log into Mahara webpage by using account information
     When User click menu button
@@ -14,7 +14,7 @@ Feature: Mahara Webpage Portfolio and Groups options
 		| Export |
 		| Import |
 
-@JH
+@regression
   Scenario: Verify Groups options
   Given User log into Mahara webpage by using account information
     When User click menu button

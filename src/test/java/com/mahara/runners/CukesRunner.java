@@ -9,7 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				"json:target/cucumber.json"
 		},
 
-	tags="@tam",
+	tags="",
 		features="src/test/resources/com/mahara/features/",
 		glue="com/mahara/step_definitions",
 		dryRun=false

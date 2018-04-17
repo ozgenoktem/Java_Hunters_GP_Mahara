@@ -16,7 +16,7 @@ Feature: Creating Professional Profile
       | Goals and Skills        |
       | Interests               |
 
-   @tam
+   
     Scenario: Fill out Introduction page options
     Given User is on Resume page
     When Introduction option is selected #default
