@@ -2,7 +2,7 @@
 #Completed
 Feature: Creating a new Profile with details
 
-
+@regression
   Scenario: Create new profile
     When User log into Mahara webpage by using account information
     When User click menu button
@@ -22,7 +22,7 @@ Feature: Creating a new Profile with details
     And click Save Profile
     Then user should see "Profile saved successfully"
 
-
+@regression
   Scenario: Adding new profile photo on new account
     When User log into Mahara webpage by using account information
     When User click menu button

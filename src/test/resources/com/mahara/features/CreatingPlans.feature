@@ -2,7 +2,7 @@
 
 Feature: Creating Plans 
  
- @ts
+ @regression
  Scenario: Creating new Plan
     When User log into Mahara webpage by using account information
     When User click menu button

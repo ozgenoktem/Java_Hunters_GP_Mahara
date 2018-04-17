@@ -1,7 +1,7 @@
 #Author:Orkhan
 Feature: Creating Portfolio
 
-@gee
+@regression
   Scenario: Creating new Collections
  		When User log into Mahara webpage by using account information
     Then User click menu button
@@ -15,7 +15,7 @@ Feature: Creating Portfolio
  		Then User click Done button
  		Then User should see created data
 
-@gee
+@regression
   Scenario: Creating new Pages
   When User log into Mahara webpage by using account information
     Then User click menu button
